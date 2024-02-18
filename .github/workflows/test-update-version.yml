@@ -1,9 +1,17 @@
 name: CI with release-please
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Select version increment type'
+        required: true
+        default: 'patch' # Default value if not provided
+        type: choice
+        options:
+          - patch
+          - minor
+
 
 jobs:
   release-please:
@@ -16,15 +24,14 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
 
     - name: Use custome action
-      id: test-git-action
-      uses: ahmad-kemsan/test-git-action@1.0.6
+      uses: ahmad-kemsan/test-git-action@1.0.7
       with:
-        release-type: 1.0.2
+        release-as: ${{ inputs.version_type }}
         token: ${{ secrets.TOKEN_GITHUB }}
         url: https://github.com/ahmad-kemsan/js-wrapper.git
