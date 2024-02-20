@@ -189,8 +189,12 @@ export class LexActivator {
 			throw new LexActivatorException(status);
 		}
 	}
+
 	// check for other commit
 	// check the same.
+
+	//  check one commit here
+	//  check other line but same.
 
 	/**
 	 * Enables network logs.
