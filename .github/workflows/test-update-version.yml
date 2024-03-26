@@ -3,15 +3,19 @@ name: CI with release-please
 on:
   workflow_dispatch:
     inputs:
+      just_bump_version:
+        type: boolean
+        description: 'Just a version bump.'
+        required: true
+        default: false
       version_type:
         description: 'Select version increment type'
         required: true
-        default: 'patch' # Default value if not provided
+        default: 'patch'
         type: choice
         options:
           - patch
           - minor
-
 
 jobs:
   release-please:
@@ -30,8 +34,12 @@ jobs:
       run: npm install
 
     - name: Use custome action
-      uses: ahmad-kemsan/test-git-action@1.0.7
+      id: test_action
+      uses: ahmad-kemsan/test-git-action@1.2.4
       with:
         release-as: ${{ inputs.version_type }}
+        git-user-name: ahmad-kemsan
+        git-user-email: ahmadkemsan@gmail.com
+        just-bump-version: ${{ inputs.just_bump_version }}
         token: ${{ secrets.TOKEN_GITHUB }}
         url: https://github.com/ahmad-kemsan/js-wrapper.git
