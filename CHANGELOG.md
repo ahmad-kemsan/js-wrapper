@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.26.4](https://github.com/ahmad-kemsan/js-wrapper/compare/3.26.3...3.26.4) (2024-03-26)
+
+
+### Miscellaneous Chores
+
+* checking the changelogs again ([3832f0f](https://github.com/ahmad-kemsan/js-wrapper/commit/3832f0fffab8e7e8db29504a5b9d1cde0dba6eae))
+* Just a bump version ([5ab1609](https://github.com/ahmad-kemsan/js-wrapper/commit/5ab1609b6f8dab9cadebe4d61b5bbbe210906495))
+* Just a bump version ([e5cffa9](https://github.com/ahmad-kemsan/js-wrapper/commit/e5cffa9adc32401860b252a7a39e4e8f6eeef276))
+* updated config ([0f3ad23](https://github.com/ahmad-kemsan/js-wrapper/commit/0f3ad23e0e334f2c1413134081a9f0b057070dea))
+* updated config and workflow ([7c052cf](https://github.com/ahmad-kemsan/js-wrapper/commit/7c052cf885d7cbabd8243c3d8b12ca68a5f55c1c))
+
 ## [3.26.3](https://github.com/ahmad-kemsan/js-wrapper/compare/lexactivator-v3.26.2...lexactivator-v3.26.3) (2024-03-13)
 
 
