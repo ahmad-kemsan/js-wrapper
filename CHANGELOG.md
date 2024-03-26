@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.26.5](https://github.com/ahmad-kemsan/js-wrapper/compare/3.26.4...3.26.5) (2024-03-26)
+
+
+### Miscellaneous Chores
+
+* Just a bump version ([eac1b1c](https://github.com/ahmad-kemsan/js-wrapper/commit/eac1b1c57ad4370876c2b959a4ceb968ceff3f03))
+
 ## [3.26.4](https://github.com/ahmad-kemsan/js-wrapper/compare/3.26.3...3.26.4) (2024-03-26)
 
 
