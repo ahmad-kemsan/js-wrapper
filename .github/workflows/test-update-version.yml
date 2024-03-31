@@ -1,11 +1,11 @@
-name: CI with release-please
+name: Update version.
 
 on:
   workflow_dispatch:
     inputs:
       just_bump_version:
         type: boolean
-        description: 'Just a version bump.'
+        description: 'Empty commit.'
         required: true
         default: false
       version_type:
@@ -35,11 +35,11 @@ jobs:
 
     - name: Use custome action
       id: test_action
-      uses: ahmad-kemsan/test-git-action@1.2.4
+      uses: ahmad-kemsan/test-git-action@1.2.11
       with:
         release-as: ${{ inputs.version_type }}
         git-user-name: ahmad-kemsan
         git-user-email: ahmadkemsan@gmail.com
-        just-bump-version: ${{ inputs.just_bump_version }}
+        empty-commit: ${{ inputs.just_bump_version }}
         token: ${{ secrets.TOKEN_GITHUB }}
-        url: https://github.com/ahmad-kemsan/js-wrapper.git
+        url: https://github.com/ahmad-kemsan/test-repo.git

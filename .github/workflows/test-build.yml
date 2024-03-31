@@ -1,0 +1,43 @@
+name: Build package.
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+    
+      - name: Fetch tags
+        run: git fetch origin --tags
+      
+      - name: Push Tag
+        id: push-tag
+        uses: ahmad-kemsan/test-git-action@1.2.11
+        with:
+          operation-mode: push-tags
+          git-user-name: ahmad-kemsan
+          git-user-email: ahmadkemsan@gmail.com
+
+      - name: Proceed if Tag Push was Successful
+        if: steps.push-tag.outputs.tagging-status == 'true'
+        run: |
+          echo "Tag push was successful, proceeding with next steps..."
+          # Place your subsequent commands here
+      
+      - name: Exit if Tag Push Failed
+        if: steps.push-tag.outputs.tagging-status != 'true'
+        run: |
+          echo "Tag push failed, exiting workflow..."
+          exit 1
