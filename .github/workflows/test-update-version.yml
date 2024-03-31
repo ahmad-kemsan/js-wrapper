@@ -42,4 +42,4 @@ jobs:
         git-user-email: ahmadkemsan@gmail.com
         empty-commit: ${{ inputs.just_bump_version }}
         token: ${{ secrets.TOKEN_GITHUB }}
-        url: https://github.com/ahmad-kemsan/test-repo.git
+        url: https://github.com/ahmad-kemsan/js-wrapper.git
