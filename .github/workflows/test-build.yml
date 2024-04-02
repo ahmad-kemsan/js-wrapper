@@ -24,7 +24,7 @@ jobs:
       
       - name: Push Tag
         id: push-tag
-        uses: ahmad-kemsan/test-git-action@1.2.12
+        uses: ahmad-kemsan/test-git-action@1.2.13
         with:
           operation-mode: push-tags
           git-user-name: ahmad-kemsan

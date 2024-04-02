@@ -35,7 +35,7 @@ jobs:
 
     - name: Use custome action
       id: test_action
-      uses: ahmad-kemsan/test-git-action@1.2.12
+      uses: ahmad-kemsan/test-git-action@1.2.13
       with:
         release-as: ${{ inputs.version_type }}
         git-user-name: ahmad-kemsan
