@@ -44,7 +44,7 @@ jobs:
           docker run -t -v $PWD:$PWD -w $PWD cryptlex/alpine-builder:2 ./scripts/build-linux-musl.sh
 
       - name: 'Upload artifacts'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: artifacts
           path: |
