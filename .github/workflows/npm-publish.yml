@@ -55,28 +55,28 @@ jobs:
           retention-days: 1
   
   # Publish to NPM
-  publish-npm:
-    needs: build-addons
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - run: git pull origin master --ff-only
+  # publish-npm:
+  #   needs: build-addons
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: git pull origin master --ff-only
 
-      - name: 'Download artifacts'
-        uses: actions/download-artifact@v2
-        with:
-          path: ./lib/bindings
-          name: artifacts
+  #     - name: 'Download artifacts'
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         path: ./lib/bindings
+  #         name: artifacts
 
-      - name: 'Build library'
-        run: |
-          npm ci
-          npm run build
+  #     - name: 'Build library'
+  #       run: |
+  #         npm ci
+  #         npm run build
 
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+  #     - run: npm publish --access public
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.npm_token}}
