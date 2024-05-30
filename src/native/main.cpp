@@ -747,8 +747,8 @@ Napi::Value getLicenseActivationDate(const Napi::CallbackInfo &info)
         Napi::TypeError::New(env, INVALID_ARGUMENT_TYPE).ThrowAsJavaScriptException();
         return env.Null();
     }
-    Napi::Uint32Array array = info[0].As<Napi::Uint32Array>();
-    uint32_t *arg0 = reinterpret_cast<uint32_t *>(array.ArrayBuffer().Data());
+    Napi::BigUint64Array array = info[0].As<Napi::BigUint64Array>();
+    long long *arg0 = reinterpret_cast<long long *>(array.ArrayBuffer().Data());
     return Napi::Number::New(env, GetLicenseActivationDate(arg0));
 }
 

@@ -687,8 +687,8 @@ export class LexActivator {
 	 * @return {number} the timestamp
 	 * @throws {LexActivatorException}
 	 */
-	static GetLicenseActivationDate(): number {
-		const activationDate = new Uint32Array(1);
+	static GetLicenseActivationDate(): number | bigint  {
+		const activationDate = new BigUint64Array(1);
 		const status = LexActivatorNative.GetLicenseActivationDate(activationDate);
 		switch (status) {
 			case LexStatusCodes.LA_OK:
