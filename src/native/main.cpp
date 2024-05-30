@@ -749,6 +749,7 @@ Napi::Value getLicenseActivationDate(const Napi::CallbackInfo &info)
     }
     Napi::BigUint64Array array = info[0].As<Napi::BigUint64Array>();
     long long *arg0 = reinterpret_cast<long long *>(array.ArrayBuffer().Data());
+    printf("long long number");
     return Napi::Number::New(env, GetLicenseActivationDate(arg0));
 }
 
